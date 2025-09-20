@@ -1,7 +1,6 @@
 fastapi
 uvicorn
-streamlit
-requests
+python-multipart
 torch
 torchvision
-Pillow
+pillow

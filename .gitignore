@@ -28,11 +28,6 @@ data/
 results/
 !results/.gitkeep
 
-# Модели — можно оставить 1 лучший файл, остальное игнорить
-models/*
-!models/.gitkeep
-!models/inpainting_unet.pt
-
 # ============================
 # OS / Editors
 # ============================
