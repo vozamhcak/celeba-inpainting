@@ -69,3 +69,8 @@ async def predict(file: UploadFile = File(...)):
     
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
+    
+    
+@app.get("/meta")
+def meta():
+    return {"img_size": IMG_SIZE}

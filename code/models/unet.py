@@ -21,11 +21,6 @@ class UNetBlock(nn.Module):
         return self.block(x)
 
 class UNet(nn.Module):
-    """
-    Небольшой U-Net для картинок 32×32 / 52×52 (кратно 2, >= 32).
-    Энкодер: 3→64→128→256→512
-    Декодер с скип-конкатами и финальным Sigmoid (учим в [0,1]).
-    """
     def __init__(self):
         super().__init__()
         # Encoder

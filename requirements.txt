@@ -4,3 +4,7 @@ python-multipart
 torch
 torchvision
 pillow
+streamlit
+requests
+Pillow
+streamlit-drawable-canvas

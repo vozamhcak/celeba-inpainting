@@ -55,7 +55,6 @@ if USE_SUBSET:
 def mask_random_square(img, max_area_ratio=MASK_MAX_AREA_RATIO, fill=0.0):
     """
     img: Tensor [C,H,W] в [0,1]
-    Рисуем чёрный квадрат со случайным размером и позицией.
     """
     c, h, w = img.shape
     mask_img = img.clone()
