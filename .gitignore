@@ -1,0 +1,45 @@
+# ============================
+# Python
+# ============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual env
+.env/
+.venv/
+env/
+venv/
+
+# ============================
+# Project-specific
+# ============================
+
+# Datasets (не пушим сырые данные)
+data/
+!data/.gitkeep
+
+# Training results (картинки, чекпоинты)
+results/
+!results/.gitkeep
+
+# Модели — можно оставить 1 лучший файл, остальное игнорить
+models/*
+!models/.gitkeep
+!models/inpainting_unet.pt
+
+# ============================
+# OS / Editors
+# ============================
+
+# macOS
+.DS_Store
+
+# VSCode / PyCharm
+.vscode/
+.idea/
