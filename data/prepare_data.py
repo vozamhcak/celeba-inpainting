@@ -4,6 +4,8 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader, random_split
 from PIL import Image
 
+to_pil = transforms.ToPILImage()
+
 RAW_DATA_DIR = "data/raw"
 PROCESSED_DATA_DIR = "data/processed"
 IMG_SIZE = 64
@@ -27,6 +29,7 @@ train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
 
 def save_dataset(dataset, folder):
     for i, (img, _) in enumerate(dataset):
+        img = to_pil(img)
         img_path = os.path.join(folder, f"{i:04d}.png")
         img.save(img_path)
 
