@@ -2,11 +2,8 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir \
-    "streamlit==1.25.0" \
-    "streamlit-drawable-canvas==0.9.3" \
-    requests \
-    Pillow
+COPY requirements.app.txt /app/requirements.app.txt
+RUN pip install --no-cache-dir -r requirements.app.txt
 
 COPY code/deployment/app /app/app
 

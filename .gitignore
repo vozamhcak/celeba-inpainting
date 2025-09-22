@@ -1,40 +1,13 @@
-# ============================
-# Python
-# ============================
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 *.so
-
-# Jupyter
 .ipynb_checkpoints/
-
-# Virtual env
 .env/
 .venv/
 env/
 venv/
-
-# ============================
-# Project-specific
-# ============================
-
-# Datasets (не пушим сырые данные)
-data/
-!data/.gitkeep
-
-# Training results (картинки, чекпоинты)
-results/
-!results/.gitkeep
-
-# ============================
-# OS / Editors
-# ============================
-
-# macOS
 .DS_Store
-
-# VSCode / PyCharm
 .vscode/
 .idea/
