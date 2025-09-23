@@ -1,0 +1,139 @@
+[2025-09-23T14:54:19.419+0300] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-09-23T14:54:19.423+0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: inpainting_pipeline.deploy_api manual__2025-09-23T11:47:26.523389+00:00 [queued]>
+[2025-09-23T14:54:19.425+0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: inpainting_pipeline.deploy_api manual__2025-09-23T11:47:26.523389+00:00 [queued]>
+[2025-09-23T14:54:19.425+0300] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2025-09-23T14:54:19.467+0300] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): deploy_api> on 2025-09-23 11:47:26.523389+00:00
+[2025-09-23T14:54:19.470+0300] {standard_task_runner.py:72} INFO - Started process 83977 to run task
+[2025-09-23T14:54:19.473+0300] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'inpainting_pipeline', 'deploy_api', 'manual__2025-09-23T11:47:26.523389+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/inpainting_pipeline.py', '--cfg-path', '/var/folders/h3/mldqkd0s4gs3d0z9_b487vs00000gn/T/tmpnrutsx6s']
+[2025-09-23T14:54:19.474+0300] {standard_task_runner.py:105} INFO - Job 26: Subtask deploy_api
+[2025-09-23T14:54:19.491+0300] {task_command.py:467} INFO - Running <TaskInstance: inpainting_pipeline.deploy_api manual__2025-09-23T11:47:26.523389+00:00 [running]> on host macbook-air-alexander-2.local
+[2025-09-23T14:54:19.511+0300] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops-student' AIRFLOW_CTX_DAG_ID='inpainting_pipeline' AIRFLOW_CTX_TASK_ID='deploy_api' AIRFLOW_CTX_EXECUTION_DATE='2025-09-23T11:47:26.523389+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-23T11:47:26.523389+00:00'
+[2025-09-23T14:54:19.511+0300] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-09-23T14:54:19.512+0300] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-09-23T14:54:19.512+0300] {logging_mixin.py:190} INFO - Current task name:deploy_api state:running start_date:2025-09-23 11:54:19.423712+00:00
+[2025-09-23T14:54:19.512+0300] {logging_mixin.py:190} INFO - Dag name:inpainting_pipeline and current dag run status:running
+[2025-09-23T14:54:19.512+0300] {taskinstance.py:731} INFO - ::endgroup::
+[2025-09-23T14:54:19.513+0300] {inpainting_pipeline.py:12} INFO - Running command: docker compose -f /Users/vozamhcak/celeba-inpainting/docker-compose.yml up -d --build
+[2025-09-23T14:54:37.732+0300] {inpainting_pipeline.py:21} INFO - STDOUT:
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [api internal] load build definition from Dockerfile.api
+#1 transferring dockerfile: 361B 0.0s done
+#1 DONE 0.0s
+
+#2 [api internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 5.1s
+
+#3 [api internal] load .dockerignore
+#3 transferring context: 126B 0.0s done
+#3 DONE 0.0s
+
+#4 [api 1/6] FROM docker.io/library/python:3.10-slim@sha256:f8081b61393cc16b2339d377bb523a5646cdd28fc6105612b3893c405d27f730
+#4 resolve docker.io/library/python:3.10-slim@sha256:f8081b61393cc16b2339d377bb523a5646cdd28fc6105612b3893c405d27f730 0.1s done
+#4 DONE 0.1s
+
+#5 [api internal] load build context
+#5 transferring context: 24.74MB 0.3s done
+#5 DONE 0.3s
+
+#6 [api 2/6] WORKDIR /app
+#6 CACHED
+
+#7 [api 3/6] COPY requirements.api.txt /app/requirements.txt
+#7 CACHED
+
+#8 [api 4/6] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [api 5/6] COPY code /app/code
+#9 DONE 0.0s
+
+#10 [api 6/6] COPY models /app/models
+#10 DONE 0.1s
+
+#11 [api] exporting to image
+#11 exporting layers
+#11 exporting layers 0.5s done
+#11 exporting manifest sha256:4e7075a325ff88070acb8fa0b52c4a4b048aef9dd5a5c7d7bde1386f33ca8af4
+#11 exporting manifest sha256:4e7075a325ff88070acb8fa0b52c4a4b048aef9dd5a5c7d7bde1386f33ca8af4 done
+#11 exporting config sha256:3cef21393ccc0da82e567ef49f1b8655cf22288cffdf6755af78b4549d34098a done
+#11 exporting attestation manifest sha256:a87ec901e5c5236b0cc892cd11ed4e6c54608f21add23e6c7f680bc4f2f50903 done
+#11 exporting manifest list sha256:ee2e89e65aea5e3e7659a2e4d9af4d6bbe24ddfd0f37ed7100775a1a0ff02e68 done
+#11 naming to docker.io/library/celeba-api:latest done
+#11 unpacking to docker.io/library/celeba-api:latest 0.1s done
+#11 DONE 0.7s
+
+#12 [api] resolving provenance for metadata file
+#12 DONE 0.0s
+
+#13 [app internal] load build definition from Dockerfile.app
+#13 transferring dockerfile: 401B done
+#13 DONE 0.0s
+
+#2 [app internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 5.4s
+
+#14 [app internal] load .dockerignore
+#14 transferring context: 126B done
+#14 DONE 0.0s
+
+#15 [app internal] load build context
+#15 transferring context: 390B done
+#15 DONE 0.0s
+
+#4 [app 1/5] FROM docker.io/library/python:3.10-slim@sha256:f8081b61393cc16b2339d377bb523a5646cdd28fc6105612b3893c405d27f730
+#4 resolve docker.io/library/python:3.10-slim@sha256:f8081b61393cc16b2339d377bb523a5646cdd28fc6105612b3893c405d27f730 done
+#4 DONE 0.1s
+
+#6 [app 2/5] WORKDIR /app
+#6 CACHED
+
+#16 [app 3/5] COPY requirements.app.txt /app/requirements.app.txt
+#16 CACHED
+
+#17 [app 4/5] RUN pip install --no-cache-dir -r requirements.app.txt
+#17 CACHED
+
+#18 [app 5/5] COPY code/deployment/app /app/app
+#18 CACHED
+
+#19 [app] exporting to image
+#19 exporting layers done
+#19 exporting manifest sha256:7b992b6f2a1b71aa52c5148f7330691e7fbd899718524ff1d3d31ebc70e0554f done
+#19 exporting config sha256:db9c0e9530b07e0692b55c18b5afe4f0281d70cbe8d9465400bd4e8b285cb817 done
+#19 exporting attestation manifest sha256:606f87b079d0a0afd0e5aafeadafb00f3529057470846e89cf12b729171dd1b7 done
+#19 exporting manifest list sha256:c495626fa38929456319fbc6ad24eeb10c8937067bfeb5b05c65d50658b95a2c done
+#19 naming to docker.io/library/celeba-app:latest done
+#19 unpacking to docker.io/library/celeba-app:latest done
+#19 DONE 0.0s
+
+#20 [app] resolving provenance for metadata file
+#20 DONE 0.0s
+
+[2025-09-23T14:54:37.735+0300] {inpainting_pipeline.py:23} ERROR - STDERR:
+time="2025-09-23T14:54:19+03:00" level=warning msg="/Users/vozamhcak/celeba-inpainting/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ api  Built
+ app  Built
+ Container celeba-api  Recreate
+ Container celeba-api  Recreated
+ Container celeba-app  Recreate
+ Container celeba-app  Recreated
+ Container celeba-api  Starting
+ Container celeba-api  Started
+ Container celeba-api  Waiting
+ Container celeba-api  Healthy
+ Container celeba-app  Starting
+ Container celeba-app  Started
+
+[2025-09-23T14:54:37.736+0300] {python.py:240} INFO - Done. Returned value was: None
+[2025-09-23T14:54:37.749+0300] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-23T14:54:37.749+0300] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=inpainting_pipeline, task_id=deploy_api, run_id=manual__2025-09-23T11:47:26.523389+00:00, execution_date=20250923T114726, start_date=20250923T115419, end_date=20250923T115437
+[2025-09-23T14:54:37.754+0300] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-09-23T14:54:37.754+0300] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-09-23T14:54:37.755+0300] {logging_mixin.py:190} INFO - Dag name:inpainting_pipeline queued_at:2025-09-23 11:47:26.530567+00:00
+[2025-09-23T14:54:37.755+0300] {logging_mixin.py:190} INFO - Task hostname:macbook-air-alexander-2.local operator:PythonOperator
+[2025-09-23T14:54:37.771+0300] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-09-23T14:54:37.777+0300] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-23T14:54:37.777+0300] {local_task_job_runner.py:245} INFO - ::endgroup::

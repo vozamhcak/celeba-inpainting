@@ -44,3 +44,75 @@
 [2025-09-23T12:59:12.993+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:59:12.993+0300] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-09-23T12:59:13.001+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:59:13.001+0300] {dag.py:4180} INFO - Setting next_dagrun for inpainting_pipeline to 2025-09-23 00:00:00+00:00, run_after=2025-09-24 00:00:00+00:00
 [2025-09-23T12:59:13.006+0300] {processor.py:208} INFO - Processing /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py took 0.073 seconds
+[2025-09-23T14:47:05.177+0300] {processor.py:186} INFO - Started process (PID=81264) to work on /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:47:05.179+0300] {processor.py:914} INFO - Processing file /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py for tasks to queue
+[2025-09-23T14:47:05.179+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:47:05.179+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:47:05.202+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:47:05.202+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:47:05.203+0300] {processor.py:925} INFO - DAG(s) 'inpainting_pipeline' retrieved from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:47:05.239+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:47:05.239+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T14:47:05.246+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:47:05.245+0300] {dag.py:4180} INFO - Setting next_dagrun for inpainting_pipeline to 2025-09-23 00:00:00+00:00, run_after=2025-09-24 00:00:00+00:00
+[2025-09-23T14:47:05.251+0300] {processor.py:208} INFO - Processing /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py took 0.075 seconds
+[2025-09-23T14:49:02.860+0300] {processor.py:186} INFO - Started process (PID=81973) to work on /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:49:02.862+0300] {processor.py:914} INFO - Processing file /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py for tasks to queue
+[2025-09-23T14:49:02.862+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:49:02.862+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:49:02.885+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:49:02.885+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:49:02.887+0300] {processor.py:925} INFO - DAG(s) 'inpainting_pipeline' retrieved from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:49:02.920+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:49:02.920+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T14:49:02.927+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:49:02.927+0300] {dag.py:4180} INFO - Setting next_dagrun for inpainting_pipeline to 2025-09-23 00:00:00+00:00, run_after=2025-09-24 00:00:00+00:00
+[2025-09-23T14:49:02.932+0300] {processor.py:208} INFO - Processing /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py took 0.073 seconds
+[2025-09-23T14:50:12.863+0300] {processor.py:186} INFO - Started process (PID=82373) to work on /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:50:12.865+0300] {processor.py:914} INFO - Processing file /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py for tasks to queue
+[2025-09-23T14:50:12.865+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:50:12.865+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:50:12.887+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:50:12.888+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:50:12.889+0300] {processor.py:925} INFO - DAG(s) 'inpainting_pipeline' retrieved from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:50:12.922+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:50:12.922+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T14:50:12.929+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:50:12.929+0300] {dag.py:4180} INFO - Setting next_dagrun for inpainting_pipeline to 2025-09-23 00:00:00+00:00, run_after=2025-09-24 00:00:00+00:00
+[2025-09-23T14:50:12.934+0300] {processor.py:208} INFO - Processing /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py took 0.073 seconds
+[2025-09-23T14:51:27.192+0300] {processor.py:186} INFO - Started process (PID=82817) to work on /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:51:27.194+0300] {processor.py:914} INFO - Processing file /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py for tasks to queue
+[2025-09-23T14:51:27.194+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:51:27.194+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:51:27.217+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:51:27.218+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:51:27.219+0300] {processor.py:925} INFO - DAG(s) 'inpainting_pipeline' retrieved from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:51:27.253+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:51:27.252+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T14:51:27.259+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:51:27.259+0300] {dag.py:4180} INFO - Setting next_dagrun for inpainting_pipeline to 2025-09-23 00:00:00+00:00, run_after=2025-09-24 00:00:00+00:00
+[2025-09-23T14:51:27.265+0300] {processor.py:208} INFO - Processing /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py took 0.074 seconds
+[2025-09-23T14:52:41.091+0300] {processor.py:186} INFO - Started process (PID=83267) to work on /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:52:41.091+0300] {processor.py:914} INFO - Processing file /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py for tasks to queue
+[2025-09-23T14:52:41.092+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:52:41.091+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:52:41.114+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:52:41.115+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:52:41.116+0300] {processor.py:925} INFO - DAG(s) 'inpainting_pipeline' retrieved from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:52:41.150+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:52:41.150+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T14:52:41.156+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:52:41.156+0300] {dag.py:4180} INFO - Setting next_dagrun for inpainting_pipeline to 2025-09-23 00:00:00+00:00, run_after=2025-09-24 00:00:00+00:00
+[2025-09-23T14:52:41.161+0300] {processor.py:208} INFO - Processing /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py took 0.072 seconds
+[2025-09-23T14:53:52.344+0300] {processor.py:186} INFO - Started process (PID=83677) to work on /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:53:52.345+0300] {processor.py:914} INFO - Processing file /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py for tasks to queue
+[2025-09-23T14:53:52.345+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:53:52.345+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:53:52.368+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:53:52.368+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:53:52.370+0300] {processor.py:925} INFO - DAG(s) 'inpainting_pipeline' retrieved from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:53:52.403+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:53:52.403+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T14:53:52.410+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:53:52.410+0300] {dag.py:4180} INFO - Setting next_dagrun for inpainting_pipeline to 2025-09-23 00:00:00+00:00, run_after=2025-09-24 00:00:00+00:00
+[2025-09-23T14:53:52.415+0300] {processor.py:208} INFO - Processing /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py took 0.072 seconds
+[2025-09-23T14:55:55.684+0300] {processor.py:186} INFO - Started process (PID=84603) to work on /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:55:55.684+0300] {processor.py:914} INFO - Processing file /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py for tasks to queue
+[2025-09-23T14:55:55.685+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:55:55.685+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:55:55.710+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:55:55.711+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:55:55.712+0300] {processor.py:925} INFO - DAG(s) 'inpainting_pipeline' retrieved from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:55:55.749+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:55:55.749+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T14:55:55.756+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:55:55.756+0300] {dag.py:4180} INFO - Setting next_dagrun for inpainting_pipeline to 2025-09-23 00:00:00+00:00, run_after=2025-09-24 00:00:00+00:00
+[2025-09-23T14:55:55.762+0300] {processor.py:208} INFO - Processing /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py took 0.079 seconds
+[2025-09-23T14:57:10.249+0300] {processor.py:186} INFO - Started process (PID=85057) to work on /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:57:10.250+0300] {processor.py:914} INFO - Processing file /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py for tasks to queue
+[2025-09-23T14:57:10.250+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:57:10.250+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:57:10.272+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:57:10.272+0300] {logging_mixin.py:190} WARNING - /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/cron_descriptor/ExpressionDescriptor.py:69 UserWarning: No system locale set. Falling back to 'en_US'. Set LANG/LC_ALL or pass locale_code to override.
+[2025-09-23T14:57:10.274+0300] {processor.py:925} INFO - DAG(s) 'inpainting_pipeline' retrieved from /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py
+[2025-09-23T14:57:10.307+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:57:10.307+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T14:57:10.314+0300] {logging_mixin.py:190} INFO - [2025-09-23T14:57:10.314+0300] {dag.py:4180} INFO - Setting next_dagrun for inpainting_pipeline to 2025-09-23 00:00:00+00:00, run_after=2025-09-24 00:00:00+00:00
+[2025-09-23T14:57:10.321+0300] {processor.py:208} INFO - Processing /Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py took 0.073 seconds
