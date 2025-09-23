@@ -2128,3 +2128,56 @@ File Path                                                                       
 [2025-09-23T14:57:05.447+0300] {manager.py:821} INFO - Searching for files in /Users/vozamhcak/celeba-inpainting/airflow/dags
 [2025-09-23T14:57:05.485+0300] {manager.py:824} INFO - There are 57 files in /Users/vozamhcak/celeba-inpainting/airflow/dags
 [2025-09-23T14:57:19.845+0300] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-09-23T23:14:39.971+0000] {manager.py:469} INFO - Processing files using up to 2 processes at a time 
+[2025-09-23T23:14:39.972+0000] {manager.py:470} INFO - Process each file at most once every 30 seconds
+[2025-09-23T23:14:39.972+0000] {manager.py:471} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-09-23T23:14:39.972+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2025-09-23T23:14:39.975+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2025-09-23T23:14:40.030+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/inpainting_pipeline.py    167  0.02s             0           0
+================================================================================
+[2025-09-23T23:15:10.356+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/inpainting_pipeline.py    172  0.06s             1           0  0.20s           2025-09-23T23:14:40
+================================================================================
+[2025-09-23T23:15:40.759+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/inpainting_pipeline.py    177  0.02s             1           0  0.22s           2025-09-23T23:15:10
+================================================================================
+[2025-09-23T23:16:11.139+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/inpainting_pipeline.py    182  0.02s             1           0  0.12s           2025-09-23T23:15:40
+================================================================================
+[2025-09-23T23:16:41.522+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/inpainting_pipeline.py    187  0.02s             1           0  0.11s           2025-09-23T23:16:11
+================================================================================
+[2025-09-23T23:17:11.929+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/inpainting_pipeline.py    192  0.02s             1           0  0.10s           2025-09-23T23:16:41
+================================================================================
