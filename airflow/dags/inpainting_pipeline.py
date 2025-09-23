@@ -1,18 +1,42 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
+import subprocess
+import logging
 import os
 
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+
+def run_script(command, cwd=None):
+    logging.info(f"Running command: {command}")
+    try:
+        result = subprocess.run(
+            command,
+            shell=True,
+            cwd=cwd or BASE_DIR,
+            capture_output=True,
+            text=True,
+        )
+        logging.info(f"STDOUT:\n{result.stdout}")
+        if result.stderr:
+            logging.error(f"STDERR:\n{result.stderr}")
+        result.check_returncode()
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Command failed with return code {e.returncode}")
+        raise
 
 def prepare_data():
-    os.system("python code/prepare_data.py")
+    script_path = os.path.join(BASE_DIR, "code", "prepare_data.py")
+    run_script(f"python3 {script_path}")
 
 def train_model():
-    os.system("python code/models/train.py")
+    script_path = os.path.join(BASE_DIR, "code", "models", "train.py")
+    run_script(f"python3 {script_path}")
 
 def deploy_api():
-    os.system("docker compose up -d --build")
+    compose_path = os.path.join(BASE_DIR, "docker-compose.yml")
+    run_script(f"docker compose -f {compose_path} up -d --build", cwd=BASE_DIR)
 
 default_args = {
     'owner': 'mlops-student',

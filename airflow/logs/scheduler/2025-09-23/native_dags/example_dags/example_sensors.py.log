@@ -1,0 +1,21 @@
+[2025-09-23T12:54:32.284+0300] {processor.py:186} INFO - Started process (PID=69359) to work on /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py
+[2025-09-23T12:54:32.284+0300] {processor.py:914} INFO - Processing file /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-09-23T12:54:32.285+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:54:32.285+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py
+[2025-09-23T12:54:32.290+0300] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py
+[2025-09-23T12:54:32.670+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:54:32.670+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T12:54:32.674+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:54:32.673+0300] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-09-23T12:54:32.680+0300] {processor.py:208} INFO - Processing /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py took 0.397 seconds
+[2025-09-23T12:56:15.782+0300] {processor.py:186} INFO - Started process (PID=69922) to work on /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py
+[2025-09-23T12:56:15.783+0300] {processor.py:914} INFO - Processing file /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-09-23T12:56:15.784+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:56:15.784+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py
+[2025-09-23T12:56:15.791+0300] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py
+[2025-09-23T12:56:16.162+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:56:16.162+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T12:56:16.166+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:56:16.166+0300] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-09-23T12:56:16.172+0300] {processor.py:208} INFO - Processing /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py took 0.391 seconds
+[2025-09-23T12:58:46.047+0300] {processor.py:186} INFO - Started process (PID=70822) to work on /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py
+[2025-09-23T12:58:46.048+0300] {processor.py:914} INFO - Processing file /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-09-23T12:58:46.048+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:58:46.048+0300] {dagbag.py:588} INFO - Filling up the DagBag from /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py
+[2025-09-23T12:58:46.055+0300] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py
+[2025-09-23T12:58:46.437+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:58:46.437+0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-23T12:58:46.441+0300] {logging_mixin.py:190} INFO - [2025-09-23T12:58:46.441+0300] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-09-23T12:58:46.447+0300] {processor.py:208} INFO - Processing /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py took 0.401 seconds

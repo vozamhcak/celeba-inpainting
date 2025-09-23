@@ -1,73 +1,79 @@
+# code/models/train_debug.py
 import os
+import random
 import torch
 import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Subset
 from torchvision import datasets, transforms
+from torchvision.utils import save_image
 from unet import UNet
-import json
 
 DATA_DIR = "data/processed"
-MODEL_PATH = "models/inpainting_unet.pt"
-OUTPUT_DIR = "results"
-BATCH_SIZE = 64
-LR = 1e-4
-EPOCHS = 20
 IMG_SIZE = 64
+BATCH_SIZE = 10
+EPOCHS = 5
+SUBSET_SIZE = 100
+MASK_MAX_AREA_RATIO = 0.3
 SEED = 42
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"[INFO] Using device: {DEVICE}")
+
+random.seed(SEED)
+torch.manual_seed(SEED)
 
 transform = transforms.Compose([
+    transforms.Resize((IMG_SIZE, IMG_SIZE)),
     transforms.ToTensor(),
 ])
 
-train_dataset = datasets.ImageFolder(root=os.path.join(DATA_DIR, "train"), transform=transform)
-test_dataset = datasets.ImageFolder(root=os.path.join(DATA_DIR, "test"), transform=transform)
+dataset = datasets.ImageFolder(root=DATA_DIR, transform=transform)
+dataset = Subset(dataset, range(min(SUBSET_SIZE, len(dataset))))
 
-train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
+def mask_random_square(img, max_area_ratio=MASK_MAX_AREA_RATIO, fill=0.0):
+    c, h, w = img.shape
+    mask_img = img.clone()
+    max_area = int(max_area_ratio * h * w)
+    side_max = int(max_area ** 0.5)
+    size_min = max(1, h // 8)
+    size_max = max(size_min, side_max)
+    size = random.randint(size_min, min(size_max, min(h, w)))
+    y = random.randint(0, h - size)
+    x = random.randint(0, w - size)
+    mask_img[:, y:y+size, x:x+size] = fill
+    return mask_img
 
-def train():
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
+class MaskedDataset(torch.utils.data.Dataset):
+    def __init__(self, base_ds):
+        self.ds = base_ds
+    def __len__(self):
+        return len(self.ds)
+    def __getitem__(self, idx):
+        img, _ = self.ds[idx]
+        masked = mask_random_square(img)
+        return masked, img
 
-    model = UNet().to(DEVICE)
-    criterion = nn.L1Loss()
-    optimizer = optim.Adam(model.parameters(), lr=LR)
+loader = DataLoader(MaskedDataset(dataset), batch_size=BATCH_SIZE, shuffle=True)
 
-    best_loss = float("inf")
-    train_log = []
+model = UNet().to(DEVICE)
+criterion = nn.L1Loss()
+optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 
-    for epoch in range(EPOCHS):
-        model.train()
-        total_loss = 0.0
+for epoch in range(EPOCHS):
+    model.train()
+    total_loss = 0.0
+    for masked, real in loader:
+        masked = masked.to(DEVICE)
+        real = real.to(DEVICE)
 
-        for masked, real in train_loader:
-            masked = masked.to(DEVICE)
-            real = real.to(DEVICE)
+        output = model(masked)
+        loss = criterion(output, real)
 
-            output = model(masked)
-            loss = criterion(output, real)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
 
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
+        total_loss += loss.item()
 
-            total_loss += loss.item()
-
-        avg_loss = total_loss / len(train_loader)
-        print(f"Epoch [{epoch+1}/{EPOCHS}] Loss: {avg_loss:.4f}")
-
-        train_log.append({"epoch": epoch + 1, "loss": avg_loss})
-
-        if avg_loss < best_loss:
-            best_loss = avg_loss
-            torch.save(model.state_dict(), MODEL_PATH)
-            print(f"Model saved with loss: {best_loss:.4f}")
-
-    with open(os.path.join(OUTPUT_DIR, "train_log.json"), "w") as f:
-        json.dump(train_log, f, indent=2)
-
-if __name__ == "__main__":
-    train()
+    avg_loss = total_loss / len(loader)
+    print(f"[AIRFLOW][Epoch {epoch+1}/{EPOCHS}] Loss: {avg_loss:.4f}")

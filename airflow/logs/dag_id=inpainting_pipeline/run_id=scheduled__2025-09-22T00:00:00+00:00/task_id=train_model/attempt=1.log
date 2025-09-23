@@ -1,0 +1,118 @@
+[2025-09-23T12:54:01.938+0300] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-09-23T12:54:01.943+0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: inpainting_pipeline.train_model scheduled__2025-09-22T00:00:00+00:00 [queued]>
+[2025-09-23T12:54:01.945+0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: inpainting_pipeline.train_model scheduled__2025-09-22T00:00:00+00:00 [queued]>
+[2025-09-23T12:54:01.945+0300] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-09-23T12:54:01.984+0300] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): train_model> on 2025-09-22 00:00:00+00:00
+[2025-09-23T12:54:01.987+0300] {standard_task_runner.py:72} INFO - Started process 69171 to run task
+[2025-09-23T12:54:01.990+0300] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'inpainting_pipeline', 'train_model', 'scheduled__2025-09-22T00:00:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/inpainting_pipeline.py', '--cfg-path', '/var/folders/h3/mldqkd0s4gs3d0z9_b487vs00000gn/T/tmpua5lvv_i']
+[2025-09-23T12:54:01.992+0300] {standard_task_runner.py:105} INFO - Job 18: Subtask train_model
+[2025-09-23T12:54:02.011+0300] {task_command.py:467} INFO - Running <TaskInstance: inpainting_pipeline.train_model scheduled__2025-09-22T00:00:00+00:00 [running]> on host macbook-air-alexander-2.local
+[2025-09-23T12:54:02.031+0300] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops-student' AIRFLOW_CTX_DAG_ID='inpainting_pipeline' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-09-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-09-22T00:00:00+00:00'
+[2025-09-23T12:54:02.032+0300] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-09-23T12:54:02.032+0300] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-09-23T12:54:02.032+0300] {logging_mixin.py:190} INFO - Current task name:train_model state:running start_date:2025-09-23 09:54:01.943233+00:00
+[2025-09-23T12:54:02.032+0300] {logging_mixin.py:190} INFO - Dag name:inpainting_pipeline and current dag run status:running
+[2025-09-23T12:54:02.033+0300] {taskinstance.py:731} INFO - ::endgroup::
+[2025-09-23T12:54:02.033+0300] {inpainting_pipeline.py:12} INFO - Running command: python3 /Users/vozamhcak/celeba-inpainting/code/models/train.py
+[2025-09-23T12:54:03.995+0300] {inpainting_pipeline.py:21} INFO - STDOUT:
+
+[2025-09-23T12:54:03.996+0300] {inpainting_pipeline.py:23} ERROR - STDERR:
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/torch/nn/modules/loss.py:129: UserWarning: Using a target size (torch.Size([64])) that is different to the input size (torch.Size([64, 3, 64, 64])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/torch/nn/modules/loss.py:129: UserWarning: Using a target size (torch.Size([16])) that is different to the input size (torch.Size([16, 3, 64, 64])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)
+Traceback (most recent call last):
+  File "/Users/vozamhcak/celeba-inpainting/code/models/train.py", line 73, in <module>
+    train()
+  File "/Users/vozamhcak/celeba-inpainting/code/models/train.py", line 51, in train
+    loss = criterion(output, real)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/torch/nn/modules/loss.py", line 129, in forward
+    return F.l1_loss(input, target, reduction=self.reduction)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/torch/nn/functional.py", line 3794, in l1_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (64) must match the size of tensor b (16) at non-singleton dimension 3
+
+[2025-09-23T12:54:03.996+0300] {inpainting_pipeline.py:26} ERROR - Command failed with return code 1
+[2025-09-23T12:54:03.997+0300] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py", line 35, in train_model
+    run_script(f"python3 {script_path}")
+  File "/Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py", line 24, in run_script
+    result.check_returncode()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 457, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command 'python3 /Users/vozamhcak/celeba-inpainting/code/models/train.py' returned non-zero exit status 1.
+[2025-09-23T12:54:04.005+0300] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-09-23T12:54:04.005+0300] {logging_mixin.py:190} INFO - Task start:2025-09-23 09:54:01.943233+00:00 end:2025-09-23 09:54:04.004774+00:00 duration:2.061541
+[2025-09-23T12:54:04.005+0300] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): train_model> dag:<DAG: inpainting_pipeline> dagrun:<DagRun inpainting_pipeline @ 2025-09-22 00:00:00+00:00: scheduled__2025-09-22T00:00:00+00:00, state:running, queued_at: 2025-09-23 09:53:53.075372+00:00. externally triggered: False>
+[2025-09-23T12:54:04.005+0300] {logging_mixin.py:190} INFO - Failure caused by Command 'python3 /Users/vozamhcak/celeba-inpainting/code/models/train.py' returned non-zero exit status 1.
+[2025-09-23T12:54:04.005+0300] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=inpainting_pipeline, task_id=train_model, run_id=scheduled__2025-09-22T00:00:00+00:00, execution_date=20250922T000000, start_date=20250923T095401, end_date=20250923T095404
+[2025-09-23T12:54:04.010+0300] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-09-23T12:54:04.010+0300] {standard_task_runner.py:124} ERROR - Failed to execute job 18 for task train_model (Command 'python3 /Users/vozamhcak/celeba-inpainting/code/models/train.py' returned non-zero exit status 1.; 69171)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py", line 35, in train_model
+    run_script(f"python3 {script_path}")
+  File "/Users/vozamhcak/celeba-inpainting/airflow/dags/inpainting_pipeline.py", line 24, in run_script
+    result.check_returncode()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 457, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command 'python3 /Users/vozamhcak/celeba-inpainting/code/models/train.py' returned non-zero exit status 1.
+[2025-09-23T12:54:04.016+0300] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-09-23T12:54:04.025+0300] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-23T12:54:04.025+0300] {local_task_job_runner.py:245} INFO - ::endgroup::
